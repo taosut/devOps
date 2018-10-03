@@ -1,0 +1,215 @@
+{
+  "department": [
+    {
+      "id": 1,
+      "name": "MP Software",
+      "code": "mpsoft"
+    },
+    {
+      "id": 2,
+      "name": "MP Telecom",
+      "code": "mptelecome"
+    },
+    {
+      "id": 3,
+      "name": "MP Human Resource",
+      "code": "mphr"
+    },
+    {
+      "id": 4,
+      "name": "ITO",
+      "code": "ito"
+    }
+  ],
+  "employee": [
+    {
+      "id": 1,
+      "name": "Nguyễn Văn Trường",
+      "department": {
+        "id": 2,
+        "name": "MP Telecom",
+        "code": "mptelecom"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Phạm Văn B",
+      "department": {
+        "id": 1,
+        "name": "MP Software",
+        "code": "mpsoft"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Nguyễn Chí",
+      "department": {
+        "id": 1,
+        "name": "MP Software",
+        "code": "mpsoft"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Đào Hải H",
+      "department": {
+        "id": 1,
+        "name": "MP Software",
+        "code": "mpsoft"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Phùng Quang T",
+      "department": {
+        "id": 1,
+        "name": "MP Software",
+        "code": "mpsoft"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Nguyễn Bảo Đ",
+      "department": {
+        "id": 1,
+        "name": "MP Software",
+        "code": "mpsoft"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Lâm Chí K",
+      "department": {
+        "id": 1,
+        "name": "MP Software",
+        "code": "mpsoft"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Hoàng Thanh M",
+      "department": {
+        "id": 1,
+        "name": "MP Software",
+        "code": "mpsoft"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Phùng Văn T",
+      "department": {
+        "id": 2,
+        "name": "MP Telecom",
+        "code": "mptelecome"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Nguyễn Thế A",
+      "department": {
+        "id": 2,
+        "name": "MP Telecom",
+        "code": "mptelecome"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Phạm Thị L",
+      "department": {
+        "id": 2,
+        "name": "MP Telecom",
+        "code": "mptelecome"
+      }
+    },
+    {
+      "id": 12,
+      "name": "Nguyễn Bảo H",
+      "department": {
+        "id": 2,
+        "name": "MP Telecom",
+        "code": "mptelecome"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Lê Văn V",
+      "department": {
+        "id": 2,
+        "name": "MP Telecom",
+        "code": "mptelecome"
+      }
+    },
+    {
+      "id": 14,
+      "name": "Nguyễn Thế T",
+      "department": {
+        "id": 2,
+        "name": "MP Telecom",
+        "code": "mptelecome"
+      }
+    },
+    {
+      "id": 15,
+      "name": "Đào Minh T",
+      "department": {
+        "id": 3,
+        "name": "MP Human Resource",
+        "code": "mphr"
+      }
+    },
+    {
+      "id": 16,
+      "name": "Nguyễn Hoàng N",
+      "department": {
+        "id": 3,
+        "name": "MP Human Resource",
+        "code": "mphr"
+      }
+    },
+    {
+      "id": 17,
+      "name": "Lê Nhật N",
+      "department": {
+        "id": 3,
+        "name": "MP Human Resource",
+        "code": "mphr"
+      }
+    },
+    {
+      "id": 18,
+      "name": "Văn Chí T",
+      "department": {
+        "id": 3,
+        "name": "MP Human Resource",
+        "code": "mphr"
+      }
+    },
+    {
+      "id": 19,
+      "name": "Dương Thành Tùng",
+      "department": {
+        "id": 3,
+        "name": "MP Human Resource",
+        "code": "mphr"
+      }
+    },
+    {
+      "id": 20,
+      "name": "Dương Chí C",
+      "department": {
+        "id": 3,
+        "name": "MP Human Resource",
+        "code": "mphr"
+      }
+    },
+    {
+      "id": 21,
+      "name": "Nguyễn Trung K",
+      "department": {
+        "id": 3,
+        "name": "MP Human Resource",
+        "code": "mphr"
+      }
+    }
+  ]
+}

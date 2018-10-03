@@ -1,0 +1,20 @@
+Swagger là một công cụ open source khá đơn giản nhưng lại vô cùng mạnh mẽ. Swagger cung cấp 3 tools chính cho các developers :
+
+Swagger-Editor : dùng để design lên các APIs hoàn toàn mới hoặc edit lại các APIs có sẵn thông qua 1 file config
+
+Swagger-Codegen : dùng để generate ra code từ các file config có sẵn
+
+Swagger-UI : dùng để generate ra file html,css,... từ 1 file config
+
+
+Do cung cấp các tool khá đa dạng nên việc viết document bằng swagger cũng có 2 cách tiếp cận:
+
+Top-down approach: Nghĩa là chúng ta sẽ design lên các api trước khi viết code
+Bottom-up approach: Nghĩa là từ các api có sẵn sẽ generate ra 1 file config
+
+
+in any situation, the best thing you can do is the right thing, the next best thing you can do is the wrong thing, the worst thing you can do is nothing!
+
+CLI
+>json-server -w db.json -r routes.json -p 8002 -o
+>htpp-server -p 8001 swagger-edit -o
