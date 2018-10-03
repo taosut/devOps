@@ -1,0 +1,74 @@
+INSTALLING JENKINS WAR FILE
+# cd /opt
+# wget http://updates.jenkins-ci.org/download/war/2.7.3/jenkins.war
+# cp -p jenkins.war ./tomcat/webapps/
+# systemctl restart tomcat
+
+# java -jar jenkins.war --httpPort=18080
+
+Latest LTS Release: http://mirrors.jenkins-ci.org/war-stable/latest/jenkins.war
+Latest Weekly Release: http://mirrors.jenkins-ci.org/war/latest/jenkins.war
+
+# cd /opt/tomcat/.jenkins/workspace/jhipsterProject
+# chmod 755 -R mvnw
+# yarn install
+# yarn test
+# ./mvnw
+
+
+42 16 * * *
+If you want multiple times, I think the following should work:
+
+0 16,18,20,22 * * *
+for 4, 6, 8, and 10 o'clock PM every day.
+
+java -Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Ho_Chi_Minh
+
+java -jar jenkins-cli.jar -s http://192.168.50.71:18080/ user.timezone=Asia/Ho_Chi_Minh
+
+
+exec docker run --name jenkins2 -p 18080:8080 -p 50000:50000 -e JAVA_OPTS="-Duser.timezone=Asia/Ho_Chi_Minh" -v /opt/jenkins_home:/var/jenkins_home jenkins2:1.609
+
+
+# docker images
+# docker rmi  <IMAGE ID>
+
+# docker ps -a
+# docker stop $(docker ps -a -q)
+# docker rm  <CONTAINER ID>
+
+# docker container stop jenkinsci/jenkins
+# docker container rm jenkinsci/jenkins
+# docker container rmi jenkinsci/jenkins
+# docker image pull jenkinsci/jenkins
+
+# docker container run -d --name jenkins2 -p 18080:8080 -p 50000:50000 jenkinsci/jenkins
+
+Show password first login
+# docker exec jenkins2 cat /var/jenkins_home/secrets/initialAdminPassword
+
+To stop the container execute: 
+# docker container stop jenkins2
+
+And to start again, execute: 
+# docker container start jenkins2
+
+
+# docker container stop sonarqube
+# docker container rm sonarqube
+# docker image pull sonarqube
+# docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
+
+
+
+docker run -d --name sonarqube \
+-p 9000:9000 -p 9092:9092 \
+-e SONARQUBE_JDBC_USERNAME=sonar \
+-e SONARQUBE_JDBC_PASSWORD=Abc@12345678 \
+-e SONARQUBE_JDBC_URL=jdbc:mysql://localhost:3306/sonar \
+sonarqube
+  
+sudo systemctl enable docker.service
+sudo systemctl start docker.service
+
+

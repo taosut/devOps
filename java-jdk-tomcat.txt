@@ -1,0 +1,96 @@
+1. INSTALLING JAVA 
+# yum -y update
+# yum -y install java-1.8.0-openjdk.x86_64 (JRE)
+# sudo yum install java-1.8.0-openjdk-devel (JDK)
+# java -version
+
+2. JAVE HOME ENVIROMENT
+# sudo update-alternatives --display java 
+# sudo update-alternatives --config java
+
+# nano /etc/environment
+(copy and paste, copy jdk installed) JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64"
+
+# nano ~/.bash_profile
+(copy and paste) 
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64 
+export PATH=$JAVA_HOME/bin:$PATH
+
+# source ~/.bash_profile
+# echo $JAVA_HOME
+
+3. INSTALL APACHE TOMCAT 9
+# groupadd tomcat 
+# useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
+# cd /opt/
+# wget http://www-eu.apache.org/dist/tomcat/tomcat-9/v9.0.0.M15/bin/apache-tomcat-9.0.0.M15.tar.gz
+# tar -xzvf apache-tomcat-9.0.0.M15.tar.gz
+# mkdir tomcat
+# mv apache-tomcat-9.0.0.M15/* tomcat/
+# chown -hR tomcat:tomcat tomcat
+
+4. TESTING TOMCAT
+# cd /tomcat/bin/ ./startup.sh
+# netstat -plntu
+# cd /opt/tomcat/bin/./shutdown.shchown -hR tomcat:tomcat /opt/tomcat/
+
+
+
+5. CREATING SYSTMED SERVICE FILE
+# nano /etc/systemd/system/tomcat.service
+(copy and paste) 
+[Unit]
+Description=Apache Tomcat 9
+After=syslog.target network.target
+
+[Service]
+User=tomcat
+Group=tomcat
+Type=forking
+Environment=CATALINA_PID=/opt/tomcat/tomcat.pid
+Environment=CATALINA_HOME=/opt/tomcat
+Environment=CATALINA_BASE=/opt/tomcat
+ExecStart=/opt/tomcat/bin/startup.sh
+ExecStop=/opt/tomcat/bin/shutdown.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
+# systemctl daemon-reload 
+# systemctl start tomcat 
+# systemctl enable tomcat
+# netstat -plntu
+# systemctl status tomcat
+
+
+6. Configuration Tomcat User
+# cd /opt/tomcat/conf/
+# cd tomcat-users.xml
+(copy and paste)
+<role rolename="manager-gui"/>
+        <role rolename="manager-script"/>
+        <role rolename="manager-jmx"/>
+        <role rolename="manager-status"/>
+
+        <user username="admin" password="admin" roles="manager-gui, manager-script, manager-jmx, manager-status"/>
+
+
+# cd /opt/tomcat/webapps/manager/META-INF/
+# nano context.xml
+(comment code)
+<!-- <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> -->
+
+		 
+# cd /opt/tomcat/conf/
+# nano context.xml
+(copy and paste)
+<role rolename="manager-gui"/>
+        <role rolename="manager-script"/>
+        <role rolename="manager-jmx"/>
+        <role rolename="manager-status"/>
+
+        <user username="admin" password="admin" roles="manager-gui, manager-script, manager-jmx, manager-status"/>
+
+# systemctl restart tomcat

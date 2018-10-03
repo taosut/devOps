@@ -1,0 +1,133 @@
+INSTALL GIT SCM SERVER
+# yum install git-core
+# sudo useradd <user>
+# sudo passwd <user>
+
+SSH KEY FOR GIT
+# ssh-keygen -t rsa -C "key of truongnv@mpsoftware.com.vn"
+# cat ~/.ssh/id_rsa.pub | ssh <user>@192.168.50.71 "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
+
+INIT GIT 
+# sudo su <user>
+# mkdir -p /home/<user>/project-example.git
+# cd /home/<user>/project-example.git
+# git init --bare
+Initialized empty Git repository in /home/<user>/project-example.git
+
+
+GIT CLONE
+$ git clone <user>@192.168.50.71:project-example.git
+
+git@192.168.50.71:mps-ts/UID.git
+
+GIT PUSH (The first push remote origin/master)
+$ git add -A 
+$ git commit -m "The first commit"
+$ git remote add origin <user>@192.168.50.71:project-example.git 
+$ git push
+
+
+GIT PUSH 
+$ git branch -v
+$ git add -A
+$ git commit -m "blah blah"
+$ git push
+
+
+GIT PUSH NEW BRANCH ON REMOTE
+$ git checkout -b <branchname> <remote/branchname>
+$ git add -A 
+$ git commit -m "commit new branch"
+$ git push --set-upstream origin <branchname>
+
+
+CHECK REMOTE BRANCH EXIST
+$ git ls-remote
+
+GIT PULL (SELECT BRANCH NEED PULL)
+$ git checkout <branchname> (OPTION)
+$ git pull
+
+
+GIT PULL & CREATE BRANCH LOCAL
+$ git checkout -b <branchname>
+$ git branch --set-upstream-to=origin/<remote/branchname> <branchname>
+$ git pull
+
+
+RESET BRANCH
+$ git reset --hard origin/<branchname>
+
+GIT STASH (save everything changed on branch but not commit)
+$ git stash save "stash config file"  (reset changed branch current, save changed to stash)
+$ git stash list -p
+$ git stash show stash@{0}
+$ git stash apply stash@{0}  (apply to branch current, stash exist)
+$ git stash pop stash@{0}  (apply to branch current, delete stash)
+$ git stash clear (delete all stash)
+
+
+GIT MERGE (merge branch 'develop' -> 'master')
+$ git branch master
+$ git merge develop
+
+
+GIT ADD
+$ git add . (all file exist & all file new create)
+$ git add -u . (all file exist & all file deleted)
+$ git add -A | --all . (all file exist & all file new created - deleted)
+
+
+GIT CONFIG
+# nano ~/.gitconfig
+
+
+NOTE: GitLab OCCUPY PERMISSION ON /home/<user>
+
+CAP QUYEN CHO GIT USER 
+# chmod 755 /home/git
+# chmod 0644 /home/git/.bashrc
+
+
+GIT PROBLEMS NO BRANCH MASTER
+# sudo chmod -R g+ws * /home/git/uid.git
+# sudo chown -R "git:git" * /home/git/uid.git/objects (sudo chown -R <username>:<username> *)
+# sudo chmod -R 755 /home/git/uid.git/objects
+
+
+MASTER KHONG COMMIT
+# cd /home/git/uid.git
+# git config --bool core.bare true 
+
+
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEAwUsIj3NHhFmWpsI2XKjLyIkpHToyfxCGq0rDMe4pUKRa7coF
+qvGZo4f8Qbcs/8XIwK67l2to0fh7bl0zj+4ojX3Db5pswennNmoVWaCUzVtkQzQr
+Ym+q+PH5grOeSAFIzX0xbc+p7mFBujO8e1GPetSQ7im+tte9/a1iG02q2Y9gD6eW
+1h7AB8FD3cQp31P9cW2Kzw2rYNxKrOacqOOl98KFxBxRqB05VyxuZ9C//2xwJolT
+9xADG0i3uQJR2kX0QgWhqL5iFGKxKyqLe7inKU4BB84B5efDN+GqABXtnenIe6fg
+AcBWe8IJ6Zh3+8Cvr7mBzWV1U02fedbf6ismIwIDAQABAoIBAQDASA4J9ZmNNTnC
+RayiXF/r61X09zHIaP4uY77taoe66uRxa+hbdt9paBsunDOtdGkSFEAUjwrE5TSU
+Qy7J3RaGOjcyTCIofLA+1yTJ9g5QgruohrspvwALiVq2BExOQMjVcda78DqRIjqq
+KlEzM51RiSdrZCeN5+vd8J6Jnqd4p4VLIFmfE2cvmYHwNKv2/nUP9zXgY5ZQsZa+
+XoEyYYMcOuyMZMKIyQVZvreaEmeCLDT7V7Ec/64aQci4BHROwz/OsEzSUQYgTCS0
+JEwGwZ6IzbyLfyT9BHq1HCWlE1fZGAVI9rfbRJ+2Y8sHLWfuI6d03ajB0RPgrISN
+32TVs7GRAoGBAPSecqzrfp5+44SyDMSPuI2KmCnbmcS9i+xw6VkwBEFzPxZPtkOV
+QxM9HEqNdN/fXiAz7IkVbrBIztl3HHNh0yoPMNADUQWzfEto2V4RG+POvjsoR+zJ
+R69PDI9/h0R2zm+25QKz1TSHquBDYwSzMqjL4fgGMcP8S/XMBo4lJPQvAoGBAMpJ
+Q+k0P3Yg4CDQctuT8E04E6RJz863Etyg4s6PzVDgiFUcd4CBmgviaP6YLmjCcKN2u2
+J1mHgiINYq5OCOj1PfMJc24Hutdx/PTlQNlvXXeAzphznDo2BosSb9RzwJDmRNvY
+48BrV/Zc15lQambqfMY+9icN1jjGL8wVYryqvIxNAoGAdCBkQELrsUJ7sBr2hLnV
+2xvYcMaXkRaKvow7uuNYodmcMXNWC29okFGKhLnyqfTYMmF0AP/ztCxcRlCNaRkf
+re/YNGfept42O3Zi+o0UuGkFVgAhZP+I0GiuhdD83juodNBWl5nXtUBSlnRnJWwM
+uKVRePU32tqDFQTud7yadnECgYEAwY3hAR8RKgLC8iMCA8BGSlzBzo0h3fWmgp0e
+5+8I0b5GNORsO7lmuJczJCFdMW3BIbslY7EZf2O3bHkWZXFjWU1NuZaD3Oog1GMX
+7fV1RYdmJtFYRwqysBdwEaTAOOVcNdAN/Gu5uu2TDgu4A8mSok5UUYIX3DMmQOyl
+kUj9KHECgYEA4Q1xaucOqL0UazIyvU5ivsvM0O4TV92ax/mhWcO84aHU+cdbLIGu
+vKJG0aiHgXkBY1BrMwP9PC7zuPxsoYmwFvsQOCmduE+LlLuPOQOw0OJ6lp7J6BQe
+DpkSCKQ+Kva4cHcBUwInTsu57uFBw/IgJ+3xBZpPa4Mk+ayqw5NOE3s=
+-----END RSA PRIVATE KEY-----
+
+
+
+

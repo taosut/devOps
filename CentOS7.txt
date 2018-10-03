@@ -1,0 +1,121 @@
+LIST USER CENTOS
+# cd /var/spool/mail/
+
+# yum repolist all
+# yum-config-manager --disable repository…
+
+CA CENTOS
+# cd /etc/pki/ca-trust/source/anchors/
+# update-ca-trust
+
+DELETE USER
+# sudo userdel -r username
+
+# ps ux -A | grep java | column -t -s":"
+# netstat -plntu
+# kill -9 <pid>
+
+1. install wget
+# sudo yum install wget
+
+2. install netstat
+# yum provides netstat
+# sudo yum -y install net-tools
+# netstat -lntu
+
+3. install nano
+# yum install nano 
+
+D. install yum
+# yum --version
+# sudo yum install epel-release
+# sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7
+
+4. Command Linux
+Shutdown the system
+# /sbin/shutdown -h now
+# /sbin/shutdown -r now
+
+Reboot the system
+# reboot
+# systemctl reboot
+# shutdown -r now
+
+5. install firewall
+# systemctl list-units --type=service
+# yum install firewalld
+
+# systemctl enable firewalld
+# systemctl start firewalld
+
+# firewall-cmd --zone=public --remove-port=3306/tcp
+# firewall-cmd --runtime-to-permanent 
+# firewall-cmd --reload 
+
+# firewall-cmd --zone=public --permanent --add-port=9092/tcp
+# firewall-cmd --reload
+
+# systemctl status firewalld
+# firewall-cmd --list-ports
+# firewall-cmd --list-services
+
+
+7. Install node, npm, yarn
+# curl -sL https://rpm.nodesource.com/setup_8.x | bash -
+# yum install nodejs
+# sudo yum install yarn
+
+
+8. Token SonarQube truongnv: 82ed58505c48b7c15d70702b05c019077c857d9d
+
+mvn sonar:sonar \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.login=82ed58505c48b7c15d70702b05c019077c857d9d
+  
+  
+9. Command copy
+# cd /home
+# touch a.txt
+# touch ./{c, d, e}.txt
+# cp -v a.txt b.txt (-v show process copy)
+
+# mkdir -p ./lab
+# cp -v a.txt b.txt c.txt d.txt ./lab
+# cp -pv ./*.txt ./lab (-p giữ toàn bộ thuộc tính file/directory copy)
+
+# mkdir -p ./truongnv/
+# cp -av lab/ /home/truongnv (-a copy directory)
+
+# cp -n a.txt ./lab (-n không cho phép ghi đè file tồn tại)
+
+# cp -f a.txt ./lab (-f cho phép ghi đè file tồn tại)
+
+# man cp (help copy)
+ branches, refs, logs
+ hoooks, logs, objecs, 
+
+10. chmod
+0 : không có quyền gì cả
+1 : chỉ có quyền chạy
+2 : chỉ có quyền ghi
+3 : có cả quyền chạy và ghi
+4 : chỉ có quyền đọc
+5 : có cả quyền đọc và chạy
+6 : có quyền đọc và ghi
+7 : tất cả các quyền
+
+
+11. Bunzip2
+# yum install bzip2
+# cd /usr/local/share
+# sudo wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
+# bunzip2 phantomjs-2.1.1-linux-x86_64.tar.bz2
+# sudo tar -xvf phantomjs-2.1.1-linux-x86_64.tar
+# sudo ln -s /usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/share/phantomjs
+# sudo ln -s /usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
+# sudo ln -s /usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/bin/phantomjs
+
+
+
+
+
