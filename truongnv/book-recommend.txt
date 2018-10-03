@@ -1,0 +1,88 @@
+1. tôi tự học - nguyễn duy cần
+2. chiến binh cầu vồng - Andrea Hirata
+3. rèn nghị lực để lập thân - nguyễn hiến lê
+4. bắt trẻ đồng xanh - J.D. Salinger
+5. 40 Alternatives to college - James Altucher
+6. Don't go back to school - Kio Stark
+7. Cuộc đời của Pi - Yann Martel
+8. Nếu tôi biết được lúc còn hai mươi - Tina Seelig
+9. Khuyến học - Fukuzawa Yukichi
+10. Suối nguồn
+11. Đối thoại với thượng đế 
+12. Tôi nói gì khi nói về chạy bộ
+13. Sáu người đi khắp thế gian 
+14. Bảy thói quen của người thành đạt
+15. 10 days to faster reading  - abby marks beale
+16. đường xưa mấy trắng
+17. bàn về tự do 
+18. nhà giả kim
+19. để làm nên sự nghiệp - Herbert Newton Casson
+20. Living loving and learning - Leo Buscaglia 
+21. Từng qua tuổi 20 - Iain Hollingshead
+22. Những ngày thứ ba với thầy Morrie - Mitch Albom
+23. Tư duy tích cực thay đổi cuộc sống 
+24. Tuổi 20: Những năm tháng quyết định cuộc đời bạn - Meg Jay
+25. Thế giới của Sophie - Jostein Gaarder
+26. Thế giới quả là rộng lớn và có nhiều việc phải làm - Kim Woo Chung
+27. Giết con chim nhại - Harper Lee
+28. hãy sống như cuộc đời bạn muốn - Pam Grout
+29. Vào trong hoang dã - Jon Krakauer
+30. Ba chàng ngốc
+31. Súng, vi trùng và thép - Jared Diamond
+32. Lời hứa về một cây bút chì - Adam Braun
+33. Tôi muốn cuộc đời như tôi muốn - Varun Agarwal
+34. Dấn thân - Sherry Sanberg
+35. Hải trình Kon Tiki - Thor Heyrdahl
+36. Người bán hàng vĩ đại nhất thế giới - Og Mandino
+37. Đi tìm lẽ sống - Viktor Frankl
+Khoa Tài chính - Ngân hàng
+Chuyên ngành Ngân hàng
+
+
+
+*Job Requirements
+- At least 3-4 years of Java programming experience;
+- Experience or knowledge of Blockchain, Smart Contract is advantage;
+- Strong experience with Java/JEE, Spring framework (Spring-core, Spring-batch, Spring-boot), JDBC, Hibernate;
+- Experience in Web Framework (Spring MVC, Spring Rest, struts), Javascript framework (Angular, Ember, React, Backbone);
+- Experience in Websocket, JMS/ActiveMQ, Protobuf, Netty, Jasper, AOP, Mock, HA/Cluster shall be an advantage;
+- Experience in Web Container (Tomcat, Jetty);
+- Good knowledge of Linux/Unix OS shall be an advantage;
+- Good knowledge of Object-oriented analysis (OOA/OOP) and design patterns;
+- Good knowledge of Relational Database (MySQL);
+- Familiarity with caching (Memcache, Redis);
+- Familiarity with code versioning tools such as SVN, Git, etc;
+- Familiarity with build tools such as Jenkins, Ant, Maven;
+- Knowledge of Agile/Scrum, Review/Refactor, CI/Jenkins, Git CI/CD is advantage;
+- Knowledge of Automation Deploy, Automation Test is advantage;
+- Ability to multi-tasks and switch context to changing priorities in highly dynamic environment;
+- Should be strong in communication skills; 
+
+* Personality Requirements
+- Hard working, responsible, strong interpersonal and communication skills;
+- Ability of working independent and teamwork, can work under high pressure;
+- Ready to work overtime;
+
+
+
+# Junior/ Middle:
+
+Có 1 năm kinh nghiệm trở lên
+Có kiến thức Javacore tốt, (làm nhiều những nội dung liên quan đến turning performance), có kinh nghiệm làm các ứng dụng Java Web
+Đã từng làm qua các framework thông dụng của Java như : Spring, Struts, Hibernate, JSF, và J2EE có kiến thức về DBMS, hiểu biết về Javascript và Jquery
+Hiểu biết về TDD và có thể implements các requirement theo TDD, có tư duy DRY
+Thao tác tốt với HTML, CSS, JavaScript (Jquery, AngularJS, Ajax, ...), Bootstrap, JSON, XML, ...
+# Senior:
+
+Nắm vững Java Core và J2EE, có kinh nghiệm làm các ứng dụng Java Web
+Có kinh nghiệm với Struts, Spring, Hibernate, ... Biết Seasar2 là một lợi thế
+Thao tác tốt với HTML, CSS, JavaScript (Jquery, AngularJS, Ajax, ...), Bootstrap, JSON, XML, ...
+Có hiểu biết về DI, OOP, MVC Framework, ORM, RESTful, Design Patterns
+Thành thạo các công cụ quản lý mã nguồn: GIT, SVN, Ant, Maven, ...
+Sử dụng tốt các IDEs: Eclipse, NetBeans, ...
+Có kinh nghiệm làm việc với một trong các WebServer: Apache, Tomcat, Jboss, Websphere ...
+Thao tác tốt với một trong các Database: MySQL, PostgreSQL, Oracle, ... có kinh nghiệm làm việc với Big Data là một lợi thế
+Có kinh nghiệm làm việc trong các dự án theo mô hình Agile
+Có khả năng làm việc teamwork cũng như làm việc độc lập
+Có thể làm việc dưới áp lực cao về deadline cũng như chất lượng sản phẩm
+Khả năng tuy duy tốt, chủ động trong công việc, có tinh thần trách nhiệm cao để hoàn thành công việc được giao

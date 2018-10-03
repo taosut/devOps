@@ -1,0 +1,83 @@
+#CAS
+https://apereo.github.io/cas/5.0.x/planning/Architecture.html
+
+#CAS on Apache Tomcat
+#1 http://blog.lukesampson.com/cas-on-windows-localhost-setup-in-5-mins
+
+http://www.ekiras.com/2014/12/how-to-setup-and-configure-cas-central-authentication-service.html
+
+username="casuser" and password="Mellon"
+
+#CAS - Enabling SSL in Tomcat 8
+
+#1 https://tomcat.apache.org/tomcat-8.0-doc/ssl-howto.html
+
+https://crunchify.com/step-by-step-guide-to-enable-https-or-ssl-correct-way-on-apache-tomcat-server-port-8443/
+
+command: keytool -genkey -alias MPSoftware -keyalg RSA -keystore mpsoftwareKey
+
+C:\Users\truongnv\Downloads\spring-security-examples-master\spring-security-cas\src\etc\keys
+
+#CAS Database-Authentication
+
+#1 https://rahulvishwakarma.wordpress.com/2014/06/12/setup-a-casified-secure-single-sign-on-using-the-central-authentication-service/
+
+https://apereo.github.io/cas/4.0.x/installation/Database-Authentication.html
+
+http://www.ekiras.com/2014/12/how-to-setup-and-configure-cas-with-database.html
+
+#Spring security vs CAS SSO - spring-boot:run
+
+https://www.codeday.top/2017/06/20/31020.html
+
+http://www.baeldung.com/spring-security-cas-sso -> https://github.com/eugenp/tutorials
+
+https://github.com/jgribonvald/demo-spring-security-cas
+
+http://www.ekiras.com/2014/12/how-to-setup-and-configure-cas-with-database.html
+
+
+ <!-- Data source definition 
+		 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		 <property name="driverClassName"> <value>com.mysql.jdbc.Driver</value> </property>
+		 <property name="url">
+			  <value>mysql://192.168.50.70/demo_cas</value>
+		 </property>
+		 <property name="username"><value>root</value></property>
+		 <property name="password"><value>1234</value></property>
+		 </bean>
+	
+	 <bean id="defaultPasswordEncoder" class="org.jasig.cas.authentication.handler.DefaultPasswordEncoder">
+	 <constructor-arg value="SHA-256" />
+	 </bean>
+			 
+			 
+	<bean id="passwordEncoder"
+		class="org.jasig.cas.authentication.handler.DefaultPasswordEncoder"
+		c:encodingAlgorithm="MD5" p:characterEncoding="UTF-8" />
+		
+	
+		<bean id="searchModeSearchDatabaseAuthenticationHandler" class="org.jasig.cas.adaptors.jdbc.SearchModeSearchDatabaseAuthenticationHandler" abstract="false" lazy-init="default" autowire="default" > 
+		   <property name="tableUsers"><value>users</value></property> 
+		   <property name="fieldUser"><value>username</value></property> 
+		   <property name="fieldPassword"><value>password</value></property> 
+		  <property name="passwordEncoder" ref="defaultPasswordEncoder"/>
+		   <property name="dataSource" ref="dataSource"/> 
+		</bean>
+ -->
+ 
+ 
+ 
+Client redirect người dùng tới Provider cho việc xác minh
+Người dùng đăng nhập vào Provider
+Provider redirect người dùng trở lại Client với một token được sinh ra ngẫu nhiên
+Client sử dụng token đó để tạo lời gọi API tới Provider cùng với ID và Secret Key tạo nên Access Token
+Những request sau được xác minh thông qua Access Token
+Đăng xuất xóa bỏ session ở Client cũng như Provider và database
+
+Central Authentication Service (CAS) hoạt đông dựa trên Ticket
+
+Protocol CAS bao gồm ít nhất 3 thành phần: web browser, web application và CAS server.
+Khi web browser truy cập vào web application, application sẽ redirect user tới trang đăng nhập của CAS server.
+Nếu đăng nhập thành công, CAS server sẽ redirect trở về lại web application, kèm theo một security ticket. Web application sẽ dùng identifier của chính nó và ticket này để kiểm tra với CAS server xem user đó đã đăng nhập hay chưa.
+		

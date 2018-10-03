@@ -1,0 +1,32 @@
+– What does static, final mean, purposes;
+– How many accessibility modifiers exist? Please describe them.
+– Why do you need a main method?
+– How many constructors can you have?
+– Define overwriting and overloading
+– Give java API implementations for overwriting and overloading
+– Describe the String class – unique properties
+– StringBuilder vs StringBuffer
+– Collections : please describe, give some examples and compare them to eachother
+– ArrayList vs Vector
+– HashMap vs HashTable
+– What’s a tree
+– What’s a map
+– Multithreading: describe the management in java
+– What’s a semaphore?
+– How many states are there for threads?
+– Describe the usage for synchronized word (2)
+– Serialization in java – a description and usage
+– Garbage collection in java – description and usage
+– Can you guarantee the garbage collection process?
+
+http://net-informations.com/java/cjava/
+http://net-informations.com/java/default.htm
+https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
+http://javabeginnerstutorial.com/core-java/
+https://www.javatpoint.com/core-java-quiz
+https://www.javatpoint.com/core-java-quiz
+http://viettuts.vn/interview/list-cau-hoi-phong-van-java-core
+
+# Overload vs Override
+https://software.intel.com/en-us/forums/mobile-software-development/topic/563737
+https://javatutorial.net/method-overloading-vs-method-overriding-in-java

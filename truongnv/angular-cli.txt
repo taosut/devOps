@@ -1,0 +1,59 @@
+1. npm install -g @angular/cli : Cài đặt angular
+2. ng new project-name : Tạo mới project
+3. cd project-name - > ng serve --open : Run project
+4. ng g component component-name : Tạo mới Component
+5. ng generate module app-routing --flat --module=app : Tạo mới Router
+
+
+
+--http://yeoman.io
+npm install -g yo
+
+--https://bower.io/
+npm install -g bower
+
+--https://www.jhipster.tech/
+
+npm install -g yo generator-jhipster (or) yarn global add generator-jhipster
+
+yo jhipster - > ./mvnw (or) yarn start (or Live reload of your client-side code) npm start
+
+
+--Install Yeoman
+yarn global add yo
+yarn global add generator-jhipster
+
+--Add an entity
+jhipster entity Foo
+
+--Run in production (Using Docker to run the database)
+./mvnw -Pprod package
+docker-compose -f src/main/docker/mysql.yml up -d
+java -jar target/*.war
+
+
+./mvnw spring-boot:run
+
+
+git clone git@github.com:jhipster/jhipster-registry.git registry
+
+
+
+#Spring
+https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/
+
+https://spring.io/guides
+
+https://bldmystar.wordpress.com/2016/03/17/spring-la-gi-uu-diem-cua-spring-framework/
+
+https://techmaster.vn/posts/33914/ly-do-su-dung-spring-framework
+
+https://courses.springframework.guru/p/introduction-to-spring
+
+https://viblo.asia/p/spring-architecture-DzVkpBKgGnW
+
+
+Java > log4j , ELK Stack
+
+
+
