@@ -19,6 +19,11 @@
       "id": 4,
       "name": "ITO",
       "code": "ito"
+    },
+    {
+      "id": 5,
+      "name": "Viettel Corp",
+      "code": "viettel"
     }
   ],
   "employee": [
@@ -209,6 +214,15 @@
         "id": 3,
         "name": "MP Human Resource",
         "code": "mphr"
+      }
+    },
+    {
+      "id": 22,
+      "name": "Nguyễn Văn Chính",
+      "department": {
+        "id": 1,
+        "name": "MP Software",
+        "code": "mpsoft"
       }
     }
   ]
