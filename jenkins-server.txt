@@ -31,7 +31,7 @@ exec docker run --name jenkins2 -p 18080:8080 -p 50000:50000 -e JAVA_OPTS="-Duse
 
 
 # docker images
-# docker rmi  <IMAGE ID>
+# docker rmi -f <IMAGE ID>
 
 # docker ps -a
 # docker stop $(docker ps -a -q)

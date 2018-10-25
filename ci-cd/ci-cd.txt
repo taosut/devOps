@@ -1,0 +1,220 @@
+1. Continuous Integration (CI)
+Fail fast and cheap. Fail often. Fail in a way that doesn't kill you.
+
+Continuous Integration is a software development practice where members of a team integrate their work frequently, usually each person integrates at least daily - leading to multiple integrations per day.
+
+- Build, Test (Unit tests, integration tests...), Analysis, Feedback, Publish, Deploy, ...most tedious things.
+
+- A development methodology
+- Of daily developer integrations
+- Verified by automated builds
+- Every commit triggers a build
+	+ As soon as you have completed an independent functionality
+	+ A full build on another, empty machine
+
+2. Self-testing build
+- Directly go from source to running build
+	+ No manual copying
+	+ No click an dialog boxes
+	+ No configuration file editing
+- Test with
+	+ Unit tests
+	+ Functional tests (web test)
+	+ Performance tests
+- Responsible persons should be notified when anything fails
+- Test web in more browsers
+
+3. What is it not
+- Nightly builds
+- Developer branches
+- Scheduled integration point
+- Building via IDEs
+
+4. Why use CI
+- Automate the build
+- Make the build self testing
+- Keep the build fast
+- Test in a clone of the production environment
+- Everyone can see what's happening
+- Automate deployment
+
+5. CI Practices
+- Maintain a single source repository
+- Automate the build
+- Make your build self-testing
+- Every commit should build on an integration machine
+- Keep the build fast
+- Test in a clone of the production environment
+- Make it easy for anyone to get the latest executable
+- Everyone can see what's happening
+- Automate deployment
+
+6. Team Responsibility
+- Check in frequently
+- Don't check in broken code
+- Don't check in untested code
+- Don't check in when the build is broken
+- Don't go home after checking in until the system builds
+
+
+7. CD - Continuous Delivery
+- Continuous delivery / Continuous deployment 
+- Continuous, successful and repeatable methodology to deploying code
+- Automated the steps of taking checked in code and making it run on production servers, used by customers.
+
+
+8. 8 Principle of Continuous Delivery
+- The process for releasing/deploying software MUST be repeatable and reliable
+- Automate everything
+- If somethings difficult or painful, do it more often
+- Keep everything in source control
+- "Done" means released
+- Build-in quality
+- Everybody has responsibility for the release process
+- Continuous improvement
+
+9. Jenkins - Personal Information
+- Baby of Kohsuke Kawaguchi
+- In a past life named Hudson
+- Jenkins is the leading open source continuous integration tool.
+- Jenkins was originally developed as the Hudson project. Hudson's created in summer of 2004 at Sun Microsystems
+
+Là một ứng dụng web application mã nguồn mở viết bằng Java, đóng vai trò máy chủ build & test của hệ thống tích hợp liên tục.
+
+ĐẶC ĐIỂM
+
+Dễ dàng cài đặt và sử dụng.
+Đa nền tảng.
+Hỗ trợ cho nhiều công nghệ phát triển phần mềm.
+Được sử dụng rộng rãi.
+Dễ mở rộng.
+Dễ dàng liên kết với các công cụ khác của hệ thống tích hợp liên tục thông qua các plugin.
+Miễn phí.
+
+10. Popularity (As of 2016/06)
+- Total Jenkins installation
+	130,078
+- Total nodes:
+	464,273
+		3,41 nodes per installation
+- Total jobs
+	8,858,054
+
+
+11. Terminology
+- Job/project: Runnable tasks that are controlled/monitored Jenkins
+- Build: Result of one run of a Project
+
+Artifact
+- Slave: slaves are computers that are set up to build projects for a master
+- Node: Refer to all machine that are part to Jenkins grid, slaves and master
+- Executor: Separated stream of builds to be run Node in parallel
+- Workspace: Disposable directory on Node used as a working directory for building
+- Publisher: Part of the build process other than compilation. A publisher may report stable or unstable result depending on the result of its processing
+
+12. Build Status
+- Stable build: A build is stable if it was built successfully and no publisher reports it as unstable
+- Unstable build: A build is unstable if it was built successful and one or more publishers report it unstable
+- Failed build: A build is broken if it failed during building. That is, it is not successful
+
+
+13. Running Jenkins
+- Download
+	http://jenkins.io/download/
+- Set environment variable (optional)
+	JENKINS_HOME=/home/to/jenkins
+	(default path: ~/.jenkins)
+- Run
+	java -jar jenkins.war [--httpPort=8080]
+	
+
+14. Freestyle Project Configuration
+- Source Code Management
+- Build Triggers
+- Build Environment
+- Build
+- Post-build actions
+
+
+14. Pipeline Script
+#!/usr/bin/env groovy
+
+node {
+    stage('checkout') {
+        checkout scm
+    }
+
+    stage('check java') {
+        sh "java -version"
+    }
+
+    stage('clean') {
+        sh "chmod +x mvnw"
+        sh "./mvnw clean"
+    }
+
+    stage('install tools') {
+        sh "./mvnw com.github.eirslett:frontend-maven-plugin:install-node-and-yarn -DnodeVersion=v8.9.4 -DyarnVersion=v1.3.2"
+    }
+}
+
+
+15. Stage view (take photo on Jenkins server)
+
+
+
+
+
+
+Job - a unit of work for a project
+
+View - user defined collection of jobs or a
+workflow
+
+Master - the central Jenkins master, does
+job scheduling
+
+Slave - executes one or more jobs within
+slots (executors)
+
+Workspace - the working area where a job
+is carried out
+
+Plugin - user defined collection of jobs or a
+workflow
+
+https://viblo.asia/p/continuous-integration-with-jenkins-bai-2-cai-dat-va-cau-hinh-jenkins-L4x5xRwYZBM
+
+https://viblo.asia/p/continuous-integration-with-jenkins-bai-3-jenkins-integration-with-git-924lJMJYZPM
+
+https://www.slideshare.net/haochenglee/hudson-ci
+
+https://www.cs.colorado.edu/~kena/classes/5828/s12/presentation-materials/bowesjesse.pdf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

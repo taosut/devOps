@@ -37,15 +37,15 @@ mysql> SELECT user, host  FROM user;
 mysql> UPDATE user SET authentication_string=PASSWORD('master') WHERE User='master';
 
 mysql> CREATE USER 'sonarqube'@'localhost' IDENTIFIED BY 'Abc@123465';
-mysql> GRANT ALL PRIVILEGES ON sonarqube.* TO 'sonarqube'@'localhost' WITH GRANT OPTION;
+mysql> GRANT ALL PRIVILEGES ON demo_docker_jhipster.* TO 'uid_'@'localhost' WITH GRANT OPTION;
 
 NOTE: '%' allow anything IP SERVER remote access MYSQL SERVER
 
 mysql> CREATE USER 'sonarqube'@'127.0.0.1' IDENTIFIED BY 'Abc@123465';
-mysql> GRANT ALL PRIVILEGES ON sonarqube.* TO 'sonarqube'@'127.0.0.1' WITH GRANT OPTION;
+mysql> GRANT ALL PRIVILEGES ON demo_docker_jhipster.* TO 'uid_'@'127.0.0.1' WITH GRANT OPTION;
 
 mysql> CREATE USER 'sonarqube'@'%' IDENTIFIED BY 'Abc@123465';
-mysql> GRANT ALL PRIVILEGES ON sonarqube.* TO 'sonarqube'@'%' WITH GRANT OPTION;
+mysql> GRANT ALL PRIVILEGES ON demo_docker_jhipster.* TO 'uid_'@'%' WITH GRANT OPTION;
 
 mysql> FLUSH PRIVILEGES;
 
