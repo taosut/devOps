@@ -17,4 +17,4 @@ in any situation, the best thing you can do is the right thing, the next best th
 
 CLI
 >json-server -w db.json -r routes.json -p 8002 -o
->htpp-server -p 8001 swagger-edit -o
+>http-server -p 8001 swagger-editor -o
