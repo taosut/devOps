@@ -1,0 +1,38 @@
+public Page<UsUserSystemAccept> findUsUserInSystem(String systemCode, String username, String fullname, Pageable pageable) {
+
+	List<UsUserSystemAccept> listUsUserSystemAccept = new ArrayList<>();
+	Session session = getCurrentSession();
+	int firstRecord = pageable.getPageSize() * (pageable.getPageNumber());
+	username = (username == null || username.trim().isEmpty() ? null : username.trim());
+	fullname = (fullname == null || fullname.trim().isEmpty() ? null : fullname.trim());
+	
+	String selectQuerySql = "SELECT ua FROM UsUserSystemAccept ua INNER JOIN UsUsers AS u ON ua.usUser.username = u.username \n"
+			+ "WHERE ua.usSystem.code = :systemCode \r\n"
+			+ "AND (u.username LIKE CONCAT('%',:username,'%') OR :username IS NULL) \r\n"
+			+ "AND (u.fullname LIKE CONCAT('%',:fullname,'%') OR :fullname IS NULL) \r\n"
+			+ "AND u.status = 1 \r\n"
+			+ "ORDER BY u.fullname";
+	
+	Query createQuery = session.createQuery(selectQuerySql);
+	Query<UsUserSystemAccept> selectQuery = createQuery;
+	selectQuery.setParameter("systemCode", systemCode);
+	selectQuery.setParameter("username", username);
+	selectQuery.setParameter("fullname", fullname);
+	selectQuery.setFirstResult(firstRecord);
+	selectQuery.setMaxResults(pageable.getPageSize());
+	listUsUserSystemAccept = selectQuery.getResultList();
+	
+	
+	String countQuerySql = "SELECT COUNT(ua) FROM UsUserSystemAccept ua INNER JOIN UsUsers AS u ON ua.usUser.username = u.username \n"
+			+ "WHERE ua.usSystem.code = :systemCode \r\n"
+			+ "AND (u.username LIKE CONCAT('%',:username,'%') OR :username IS NULL) \r\n"
+			+ "AND (u.fullname LIKE CONCAT('%',:fullname,'%') OR :fullname IS NULL) \r\n"
+			+ "AND u.status = 1";
+	Query<Long> countQuery = session.createQuery(countQuerySql);
+	countQuery.setParameter("systemCode", systemCode);
+	countQuery.setParameter("username", username);
+	countQuery.setParameter("fullname", fullname);
+	Long total = countQuery.getSingleResult();
+	
+	return new PageImpl<>(listUsUserSystemAccept, pageable, total);
+}
