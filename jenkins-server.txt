@@ -37,6 +37,8 @@ exec docker run --name jenkins2 -p 18080:8080 -p 50000:50000 -e JAVA_OPTS="-Duse
 # docker stop $(docker ps -a -q)
 # docker rm  <CONTAINER ID>
 
+# docker container run -d --name demo-docker-jenkins -p 8083:8080  hakhanhviet/demo-docker-jenkins
+
 # docker container stop jenkinsci/jenkins
 # docker container rm jenkinsci/jenkins
 # docker container rmi jenkinsci/jenkins

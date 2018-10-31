@@ -14,6 +14,7 @@ DELETE USER
 # ps ux -A | grep java | column -t -s":"
 # netstat -plntu
 # kill -9 <pid>
+# ./mvnw > log.txt &
 
 1. install wget
 # sudo yum install wget
@@ -25,6 +26,8 @@ DELETE USER
 
 3. install nano
 # yum install nano 
+
+# yum install tmux
 
 D. install yum
 # yum --version
@@ -52,7 +55,7 @@ Reboot the system
 # firewall-cmd --runtime-to-permanent 
 # firewall-cmd --reload 
 
-# firewall-cmd --zone=public --permanent --add-port=9092/tcp
+# firewall-cmd --zone=public --permanent --add-port=8084/tcp
 # firewall-cmd --reload
 
 # systemctl status firewalld
@@ -61,6 +64,7 @@ Reboot the system
 
 
 7. Install node, npm, yarn
+# sudo yum remove nodejs
 # curl -sL https://rpm.nodesource.com/setup_8.x | bash -
 # yum install nodejs
 # sudo yum install yarn
