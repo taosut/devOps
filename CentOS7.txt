@@ -10,9 +10,9 @@ Keep process running after ending ssh session
  - start tmux by typing tmux into the shel
  - start the process you want inside the started tmux session
  - leave/detach the tmux session by typing Ctrl+b and then :detach 
- - List sessions tmux: tmux list-sessions
- - Kill session tmux: tmux kill-session -t <index-tmux-session>
-
+ - List sessions tmux: tmux ls (tmux list-sessions)
+ - Kill session tmux: tmux kill-session -t <index-tmux-session/current-name-session>
+ - tmux rename-session -t <index-tmux-session/current-name-session> <new-name-session>
 
 # ps ux -A | grep java | column -t -s":"
 # netstat -plntu
